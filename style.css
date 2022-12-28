@@ -1,3 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  background: hsl(30deg, 38%, 92%);
+  color: hsl(228deg, 12%, 48%);
+}
+
+.container {
+  height: calc(100vh - 14px);
+  display: flex;
+}
+.container .card {
+  margin: auto;
+  width: 576px;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+@media (max-width: 375px) {
+  .container .card {
+    width: 300px;
+    flex-direction: column;
+  }
+}
+.container .card .image {
+  width: 50%;
+  background: url(./images/image-product-desktop.jpg) no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 375px) {
+  .container .card .image {
+    width: 100%;
+    height: calc(0.3 * (100vh - 14px));
+    background: url(./images/image-product-mobile.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+.container .card .content {
+  width: 50%;
+  padding: 30px;
+}
+@media (max-width: 375px) {
+  .container .card .content {
+    width: 100%;
+  }
+}
+.container .card .content .category {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  margin: 0 0 20px 0;
+}
+.container .card .content .name {
+  font-family: "Fraunces", serif;
+  font-size: 35px;
+  color: hsl(212deg, 21%, 14%);
+  line-height: 35px;
+  margin-bottom: 20px;
+}
+.container .card .content .description {
+  margin-bottom: 20px;
+}
+.container .card .content .price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.container .card .content .price .new-price {
+  font-family: "Fraunces", serif;
+  font-size: 35px;
+  color: hsl(158deg, 36%, 37%);
+}
+.container .card .content .price .old-price {
+  text-decoration: line-through;
+}
+.container .card .content .button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: hsl(158deg, 36%, 37%);
+  color: hsl(0deg, 0%, 100%);
+  padding: 12px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.container .card .content .button:hover {
+  background: hsl(158deg, 30%, 20%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
 
 /*# sourceMappingURL=style.css.map */

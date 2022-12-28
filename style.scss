@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+// font-family: 'Montserrat', sans-serif; 500 700
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+// font-family: 'Fraunces', serif;  700
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+// font
+$font-size : 14px;
+
+// Colors
+$dark-cyan: hsl(158, 36%, 37%);
+$very-dark-cyan: hsl(158, 30%, 20%);
+$cream: hsl(30, 38%, 92%);
+$white: hsl(0, 0%, 100%);
+$very-dark-blue: hsl(212, 21%, 14%);
+$dark-rayish-blue: hsl(228, 12%, 48%);
+
+// breakpoints
+$desktop: 1440px;
+$mobile: 375px;
+
+body {
+  font-size: $font-size;
+  font-family: "Montserrat", sans-serif;
+  background: $cream;
+  color: $dark-rayish-blue;
+}
+
+.container {
+  height: calc(100vh - 14px);
+  display: flex;
+
+  .card {
+    margin: auto;
+    width: 0.4 * $desktop;
+    background: $white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    @media (max-width: $mobile) {
+      width: $mobile * 0.8;
+      flex-direction: column;
+    }
+
+    .image {
+      width: 50%;
+      background: url(./images/image-product-desktop.jpg)  no-repeat  center center ;
+      background-size: cover;
+      @media (max-width: $mobile) {
+          width: 100%;
+          height: calc(0.6 * 0.5 * (100vh - 14px));
+          background: url(./images/image-product-mobile.jpg)  no-repeat center center ;
+          background-size: cover;
+      }
+    }
+
+    .content {
+      width: 50%;
+      padding: 30px;
+      @media (max-width: $mobile) {
+        // padding: 15px;
+        width: 100%;
+      }
+
+      .category {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 10px;
+        margin: 0 0 20px 0;
+      }
+
+      .name {
+        font-family: 'Fraunces', serif;
+        font-size: $font-size * 2.5;
+        color: $very-dark-blue;
+        line-height: $font-size * 2.5;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        margin-bottom: 20px;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        .new-price {
+            font-family: 'Fraunces', serif;
+            font-size: $font-size * 2.5;
+            color: $dark-cyan;
+        }
+
+        .old-price {    
+            text-decoration: line-through;
+        }
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        background: $dark-cyan;
+        color: $white;
+        padding: 12px;
+        border-radius: 7px;
+        cursor: pointer;
+        &:hover {
+            background: $very-dark-cyan;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
